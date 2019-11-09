@@ -1105,6 +1105,7 @@ end
 function fish_prompt -d 'bobthefish, a fish theme optimized for awesome'
     # Save the last status for later (do this before anything else)
     set -l last_status $status
+    echo
 
     # Use a simple prompt on dumb terminals.
     if [ "$TERM" = 'dumb' ]
@@ -1164,6 +1165,15 @@ function fish_prompt -d 'bobthefish, a fish theme optimized for awesome'
     else
         __bobthefish_prompt_dir $real_pwd
     end
+
+    echo
+    if [ $last_status -eq 0 ]
+      set status_face (set_color green)"||*'-') < "
+    else
+      set status_face (set_color blue)"||-;)   < "
+    end
+  
+    echo -n $status_face
 
     __bobthefish_finish_segments
 end

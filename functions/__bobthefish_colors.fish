@@ -579,6 +579,50 @@ function __bobthefish_colors -S -a color_scheme -d 'Define colors used by bobthe
       set -x color_virtualgo                $base09 $colorfg --bold
       set -x color_desk                     $base09 $colorfg --bold
 
+    case 'mynorb' # default dark theme
+      #               light  medium dark
+      #               ------ ------ ------
+      set -l red      cc9999 BF616A 660000
+      set -l green    C1D8A8 189303 0c4801
+      set -l blue     48b4fb 005faf 255e87
+      set -l orange   EBCB8B unused 3a2a03
+      set -l brown    bf5e00 803f00 4d2600
+      set -l grey     E5E9F0 999999 3B4252
+      set -l white    ffffff
+      set -l black    000000
+      set -l ruby_red af0000
+      set -l go_blue  00d7d7
+      set -l cyan     A8D9EA A8D9EB
+      set -l bg       2F343F
+
+      set -x color_initial_segment_exit     $white[1] $red[2] --bold
+      set -x color_initial_segment_su       $white[1] $green[2] --bold
+      set -x color_initial_segment_jobs     $white[1] $blue[3] --bold
+
+      set -x color_path                     $bg[1] $grey[2]
+      set -x color_path_basename            $bg[1] $white --bold
+      set -x color_path_nowrite             $red[3] $red[1]
+      set -x color_path_nowrite_basename    $red[3] $red[1] --bold
+
+      set -x color_repo                     $green[1] $green[3]
+      set -x color_repo_work_tree           $grey[3] $white --bold
+      set -x color_repo_dirty               $red[2] $white
+      set -x color_repo_staged              $orange[1] $orange[3]
+
+      set -x color_vi_mode_default          $grey[2] $grey[3] --bold
+      set -x color_vi_mode_insert           $green[2] $grey[3] --bold
+      set -x color_vi_mode_visual           $orange[1] $orange[3] --bold
+
+      set -x color_vagrant                  $blue[1] $white --bold
+      set -x color_k8s                      $green[2] $white --bold
+      set -x color_username                 $grey[1] $blue[3] --bold
+      set -x color_hostname                 $grey[1] $blue[3]
+      set -x color_rvm                      $ruby_red $grey[1] --bold
+      set -x color_nvm                      $green[1] $white --bold
+      set -x color_virtualfish              $blue[2] $grey[1] --bold
+      set -x color_virtualgo                $go_blue $black --bold
+      set -x color_desk                     $blue[2] $grey[1] --bold
+
     case '*' # default dark theme
       #               light  medium dark
       #               ------ ------ ------
